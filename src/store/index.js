@@ -10,9 +10,6 @@ export default new Vuex.Store({
   },
 
   getters: {
-    list(state){
-      return state.list.list
-    }}
    
   },
 
@@ -20,19 +17,12 @@ export default new Vuex.Store({
   },
 
   actions: {
-
   },
 
   modules: {
     list,
     color
   },
-plugins:[createVuexPersisted(
- { reducer:{
-  list:state.list,
-  color:state.color
-    
-}}
-)]
+plugins:[createVuexPersisted()]
 
 })

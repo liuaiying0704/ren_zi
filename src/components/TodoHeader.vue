@@ -1,6 +1,7 @@
 <template>
   <header class="header">
-    <h1>todos</h1>
+    <!-- <h1 :style="{color:$store.state.color.color}">todos</h1> -->
+    <h1 :style="{color:color.color}">todos</h1>
     <input id="toggle-all" class="toggle-all" type="checkbox" />
     <label for="toggle-all"></label>
     <input
@@ -14,6 +15,7 @@
 </template>
 
 <script>
+import {mapState} from 'vuex'
 export default {
   data() {
     return {
@@ -23,7 +25,12 @@ export default {
     };
   },
 
-  created() {},
+  created() {
+    
+  },
+  computed: {
+    ...mapState(['color'])
+  },
 
   methods: {
     keydownFn() {

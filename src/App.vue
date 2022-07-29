@@ -53,9 +53,8 @@ export default {
       for (var i = 0; i < 6; i++) {
         str += arr[getRandom(0, arr.length - 1)];
       }
-      console.log(str);//颜色
-      this.$store.dispatch('updateColor',str)
-
+      console.log(str); //颜色
+      this.$store.dispatch("updateColor", str);
     },
   },
 };
