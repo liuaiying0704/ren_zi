@@ -1,64 +1,37 @@
 <template>
   <div>
-    <button @click="changeFn">换肤</button>
-    <div class="todoapp">
-      <todo-header></todo-header>
-      <todo-main></todo-main>
-      <todo-footer></todo-footer>
-    </div>
+    <!--type：可以选择的样式：
+    success
+    primary
+    warning
+    danger  -->
+      <MyButton title="成功按钮" type="success" @myclick="myclickFn"></MyButton>
+    <MyButton title="默认按钮" type="primary" @myclick="myclickFn"></MyButton>
+    <MyButton title="警告按钮" type="warning" @myclick="myclickFn"></MyButton>
+    <MyButton title="危险按钮" type="danger" @myclick="myclickFn"></MyButton>
+ 
   </div>
 </template>
 
 <script>
-import TodoFooter from "./components/TodoFooter.vue"; // shift + alt + 下
-import TodoHeader from "./components/TodoHeader.vue"; // shift + alt + 下
-import TodoMain from "./components/TodoMain.vue"; // shift + alt + 下
+import MyButton from "@/components/MyButton";
 export default {
+  components: {
+    MyButton,
+  },
   data() {
     return {};
-  },
-
-  components: {
-    TodoFooter,
-    TodoHeader,
-    TodoMain,
   },
 
   created() {},
 
   methods: {
-    changeFn() {
-      function getRandom(min, max) {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-      }
-      var arr = [
-        "0",
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7",
-        "8",
-        "9",
-        "A",
-        "B",
-        "C",
-        "D",
-        "E",
-        "F",
-      ];
-      var str = "#";
-      for (var i = 0; i < 6; i++) {
-        str += arr[getRandom(0, arr.length - 1)];
-      }
-      console.log(str);//颜色
-      this.$store.dispatch('updateColor',str)
-
+    myclickFn() {
+      alert("自定义点击事件名");
     },
   },
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+</style>
