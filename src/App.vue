@@ -5,10 +5,11 @@
     primary
     warning
     danger  -->
-      <MyButton title="成功按钮" type="success" @myclick="myclickFn"></MyButton>
-    <MyButton title="默认按钮" type="primary" @myclick="myclickFn"></MyButton>
-    <MyButton title="警告按钮" type="warning" @myclick="myclickFn"></MyButton>
-    <MyButton title="危险按钮" type="danger" @myclick="myclickFn"></MyButton>
+    <MyButton type="success" @myclick="myclickFn">
+      <span>注</span><span>册</span>
+    </MyButton>
+    <!-- <MyButton title="默认按钮" type="primary" @myclick="myclickFn"></MyButton> -->
+
  
   </div>
 </template>

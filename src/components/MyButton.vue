@@ -1,6 +1,9 @@
 <template>
 
-<button :class="`one-button-${type}`" @click="clickFn">{{title}}</button>
+<button :class="`one-button-${type}`" @click="clickFn" title="按钮">
+  <slot/>
+
+</button>
 
 </template>
 
